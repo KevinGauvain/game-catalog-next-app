@@ -12,6 +12,8 @@ const Layout: React.FC = ({ children }) => {
         <nav> </nav>
       </Head>
       <main className={styles.main}>
+        <a href="/api/auth/login">Login</a>
+        <a href="/api/auth/logout">Logout</a>
         <h1 className={styles.title}>Game Catalog</h1>
         <br />
         <p className={styles.description}>
@@ -21,9 +23,9 @@ const Layout: React.FC = ({ children }) => {
         <article>{children}</article>
         {/* <div>
           <button>
-            <Link href="/actorsList">ActorsList</Link>
+            <Link href="/NAMA">NAME</Link>
           </button>
-          <p>{actorsList}</p>
+          <p>{NAME}</p>
         </div> */}
       </main>
       <footer className={styles.footer}>
