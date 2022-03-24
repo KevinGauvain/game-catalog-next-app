@@ -13,3 +13,8 @@ export function getDatabase(): Promise<MongoClient> {
     return cachedDb;
   });
 }
+
+// const mongodb = await getDatabase();
+// const pushPrice = mongodb.db().collection("games")
+//   .updateMany({}, { $set: { price: 10 } })
+//   .then(() => client.close());
