@@ -30,6 +30,9 @@ const Layout: React.FC = ({ children }) => {
           <button>
             <Link href="/platforms">Platforms</Link>
           </button>
+          <button>
+            <Link href="/panier">Panier</Link>
+          </button>
         </nav>
         <main className={styles.main}>
           <h1 className={styles.title}>Game Catalog</h1>
