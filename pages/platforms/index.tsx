@@ -34,7 +34,8 @@ export default function PlatformsSlug({ gamesParse }) {
     <div>
       <Layout>
         <div>
-          <p></p>
+          <p>Lists of platforms :</p>
+          <br />
           <p>
             {arrayWithUniquePlat.map((element, index) => (
               <div key={index}>
@@ -47,7 +48,6 @@ export default function PlatformsSlug({ gamesParse }) {
             ))}
           </p>
         </div>
-        <p>PLATFORM SLUG ROUTE</p>
       </Layout>
     </div>
   );

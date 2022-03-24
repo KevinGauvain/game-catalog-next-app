@@ -32,7 +32,8 @@ export default function Games({ gamesParse }) {
     <div>
       <Layout>
         <div>
-          <p></p>
+          <p>Lists of games :</p>
+          <br />
           <p>
             {gamesParse.map((element, index) => (
               <div key={index}>
@@ -52,7 +53,6 @@ export default function Games({ gamesParse }) {
             ))}
           </p>
         </div>
-        <p>GAMES ROUTE</p>
       </Layout>
     </div>
   );

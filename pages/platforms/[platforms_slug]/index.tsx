@@ -31,7 +31,7 @@ export default function PlatformSlug({ gamesParse, slug }) {
   return (
     <div>
       <Layout>
-        <p>Lists of platforms</p>
+        <p>Lists of games for : {slug.platforms_slug}</p>
         <br />
         <p>
           {gamesParse.map((element) => {
