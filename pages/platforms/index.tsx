@@ -1,4 +1,4 @@
-import Layout from "../layout";
+import Layout from "../../layout";
 import { GetServerSideProps } from "next";
 import { getDatabase } from "../../src/utils/database";
 import Link from "next/link";

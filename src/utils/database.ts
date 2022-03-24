@@ -14,7 +14,12 @@ export function getDatabase(): Promise<MongoClient> {
   });
 }
 
-// const mongodb = await getDatabase();
-// const pushPrice = mongodb.db().collection("games")
-//   .updateMany({}, { $set: { price: 10 } })
-//   .then(() => client.close());
+// const getServerSideProps: GetServerSideProps = async (context) => {
+//   const mongodb = await getDatabase();
+
+//   const pushPrice = await mongodb
+//     .db("GamesCatalog-Next-App")
+//     .collection("games")
+//     .updateMany({}, { $set: { price: 10 } });
+//   return <p></p>;
+// };

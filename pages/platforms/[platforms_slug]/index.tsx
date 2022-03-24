@@ -1,4 +1,4 @@
-import Layout from "../../layout";
+import Layout from "../../../layout";
 
 import { GetServerSideProps } from "next";
 import { getDatabase } from "../../../src/utils/database";
@@ -38,8 +38,13 @@ export default function PlatformSlug({ gamesParse, slug }) {
             if (element.platform.name === slug.platforms_slug) {
               return (
                 <div>
-                  <p>Name : {element.name}</p>
-                  <p>Date : {element.first_release_date}</p>
+                  <ul>
+                    <button>
+                      <p>Name : {element.name}</p>
+                      <p>Date : {element.first_release_date}</p>
+                    </button>
+                    <button>Add to cart</button>
+                  </ul>
                 </div>
               );
             }

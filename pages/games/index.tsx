@@ -1,9 +1,10 @@
-import Layout from "../layout";
+import Layout from "../../layout";
 import Link from "next/link";
 // import styles from "../styles/Home.module.css";
 import { GetServerSideProps } from "next";
 import Image from "next/image";
 import Card from "bootstrap";
+import { useUser } from "@auth0/nextjs-auth0";
 
 import { getDatabase } from "../../src/utils/database";
 
@@ -43,6 +44,8 @@ export default function Games({ gamesParse }) {
                       {element.name}
                     </Link>
                   </button>
+                  <br />
+                  {/* <button>Add to cart</button> */}
                 </ul>
                 {/* <Image
                   src={gamesParse[0].cover.url}

@@ -1,4 +1,4 @@
-import Layout from "../../layout";
+import Layout from "../../../layout";
 
 import { GetServerSideProps } from "next";
 import { getDatabase } from "../../../src/utils/database";
@@ -13,7 +13,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     .toArray();
   const gamesStringify = JSON.stringify(games);
   const gamesParse = JSON.parse(gamesStringify);
-
   const slug = await context.params;
   // console.log(slug);
   // console.log(gamesParse);
@@ -27,6 +26,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 export default function GamesSlug({ gamesParse, slug }) {
+  const gameChosing = [];
+  console.log("------------gameChosing------", gameChosing);
   return (
     <div>
       <Layout>
@@ -37,6 +38,8 @@ export default function GamesSlug({ gamesParse, slug }) {
             if (element.slug === slug.games_slug) {
               return (
                 <div>
+                  <button>Add to cart</button>
+                  <p>Name : {element.name}</p>
                   <p>Platform : {element.platform.name}</p>
                   <p>Summary : {element.summary}</p>
                 </div>
