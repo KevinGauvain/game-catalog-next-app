@@ -38,7 +38,7 @@ export default function Games({ gamesParse }) {
               <div key={index}>
                 <ul>
                   <button>
-                    <Link href={`/platforms_slug/${[element.slug]}`}>
+                    <Link href={`/games/${[element.slug]}`}>
                       {element.name}
                     </Link>
                   </button>

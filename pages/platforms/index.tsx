@@ -3,7 +3,7 @@ import { GetServerSideProps } from "next";
 import { getDatabase } from "../../src/utils/database";
 import Link from "next/link";
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const mongodb = await getDatabase();
 
   const games = await mongodb
@@ -40,7 +40,7 @@ export default function PlatformsSlug({ gamesParse }) {
               <div key={index}>
                 <ul>
                   <button>
-                    <Link href="platforms_slug">{element}</Link>
+                    <Link href={`/platforms/${[element]}`}>{element}</Link>
                   </button>
                 </ul>
               </div>
