@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Layout>
-        <p>INDEX</p>
+        <p>Bonne découverte !</p>
       </Layout>
     </div>
   );

@@ -2,6 +2,7 @@ import Layout from "../../layout";
 import { GetServerSideProps } from "next";
 import { getDatabase } from "../../src/utils/database";
 import Link from "next/link";
+import { Card } from "react-bootstrap";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const mongodb = await getDatabase();

@@ -2,6 +2,7 @@ import Layout from "../../../layout";
 
 import { GetServerSideProps } from "next";
 import { getDatabase } from "../../../src/utils/database";
+import { Card } from "react-bootstrap";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const mongodb = await getDatabase();
@@ -38,13 +39,21 @@ export default function PlatformSlug({ gamesParse, slug }) {
             if (element.platform.name === slug.platforms_slug) {
               return (
                 <div>
-                  <ul>
-                    <button>
+                  <br />
+                  <br />
+                  <div>
+                    <ul>
                       <p>Name : {element.name}</p>
-                      <p>Date : {element.first_release_date}</p>
-                    </button>
-                    <button>Add to cart</button>
-                  </ul>
+                      <button>Add to cart</button>
+                    </ul>
+                  </div>
+                  <div>
+                    {element.cover ? (
+                      <Card.Img src={`${[element.cover.url]}`}></Card.Img>
+                    ) : (
+                      <Card.Img src="../../image/coverMissing.jpeg"></Card.Img>
+                    )}
+                  </div>
                 </div>
               );
             }

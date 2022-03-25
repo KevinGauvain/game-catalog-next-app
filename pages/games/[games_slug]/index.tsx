@@ -2,6 +2,7 @@ import Layout from "../../../layout";
 
 import { GetServerSideProps } from "next";
 import { getDatabase } from "../../../src/utils/database";
+import { Card } from "react-bootstrap";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const mongodb = await getDatabase();
@@ -25,9 +26,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
+export const articlePushCart = [];
+// console.log(articlePushCart);
+
 export default function GamesSlug({ gamesParse, slug }) {
-  const gameChosing = [];
-  console.log("------------gameChosing------", gameChosing);
+  // const gameChosing = [];
+  // console.log("------------gameChosing------", gameChosing);
   return (
     <div>
       <Layout>
@@ -38,7 +42,21 @@ export default function GamesSlug({ gamesParse, slug }) {
             if (element.slug === slug.games_slug) {
               return (
                 <div>
-                  <button>Add to cart</button>
+                  <div>
+                    {element.cover ? (
+                      <Card.Img src={`${[element.cover.url]}`}></Card.Img>
+                    ) : (
+                      <Card.Img src="../../image/coverMissing.jpeg"></Card.Img>
+                    )}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      articlePushCart.push(slug.games_slug);
+                    }}
+                  >
+                    Add to cart
+                  </button>
                   <p>Name : {element.name}</p>
                   <p>Platform : {element.platform.name}</p>
                   <p>Summary : {element.summary}</p>
